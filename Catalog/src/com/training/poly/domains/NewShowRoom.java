@@ -13,7 +13,7 @@ public class NewShowRoom extends ShowRoom {
 		}
 		else
 		{
-		    return super.getProduct(key);
+		    return super.getProduct(key);   // Calling the Overridden Method
 		}
 	}
 

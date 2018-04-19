@@ -24,6 +24,26 @@ public class Application {
          
          System.out.println(chiefLibrarian);
          
+         
+         System.out.println(javaBook.equals(seliniumBook));   // checking different object
+         
+         
+         Book bk = null;
+         
+         System.out.println(javaBook.equals(bk));   // checking cautious
+         
+         String bk2 = new String("Book");
+         
+         System.out.println(javaBook.equals(bk2));   // checking different classes
+         
+         
+         System.out.println(javaBook.equals(javaBook));   // checking identity
+         
+         Book jb =new Book("Head First Java","Kathy Sieera",340.00,400);
+         
+         System.out.println("equlity"+javaBook.equals(jb));   // checking equality
+         
+         
 	}
 
 }

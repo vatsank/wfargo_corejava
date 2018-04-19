@@ -9,11 +9,11 @@ public class Application {
 		
 		 int key = Integer.parseInt(args[0]);
 		 
-		 ShowRoom  saiAuto = new NewShowRoom();
+		 ShowRoom  saiAuto = new NewShowRoom();   // superType = subType
 				 
 				 Automobile auto = saiAuto.getProduct(key);
 		 
-		          saiAuto.printQuotation(auto);
+		          saiAuto.printQuotation(auto);  
 		          
 	}
 

@@ -39,7 +39,7 @@ public class BookManager {
 		System.out.println("Quantity :="+ itemCount);
 		System.out.println("Price :="+ amount);
 		
-		book.setPrice(book.getPrice()+100);
+		//book.setPrice(book.getPrice()+100);
 	}
 	
 }
