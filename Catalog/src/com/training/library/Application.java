@@ -19,8 +19,14 @@ public class Application {
         Book[] bkList = {javaBook,seliniumBook,mocking};
          BookManager.printBook(bkList);
         
+         
+         Librarian chiefLibrarian= new Librarian(101,"Ganesh","Vizag");
+         
+         System.out.println(chiefLibrarian);
+         
 	}
 
 }
+//http://bit.ly/java_01_vatsan
 
 
