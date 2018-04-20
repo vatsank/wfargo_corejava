@@ -11,13 +11,13 @@ public class Application {
 		 Book mocking=null;
 		try {
 		
-			 javaBook = new Book("Head First Java","Kathy Sieera",340.00,400);
-			  seliniumBook = new Book("Selinium Testing","Tom",440.00,460);
-			  mocking  = new Book("Junit Testing","Dick",1340.00,5400);
+			 javaBook = new Book("Head First Java","Kathy Sieera",140.00,400);
+			  seliniumBook = new Book("Selinium Tessting","Tom",440.00,460);
+			  mocking  = new Book("Junit Testing","Dick",13400.00,5400);
 		}
 		catch(RangeCheckException e)
 		{
-			e.printStackTrace();
+		    	e.printStackTrace();
 		} finally {
 			
 			System.out.println("Inside Finally");
@@ -29,12 +29,20 @@ public class Application {
 		  
          mgr.printBill(javaBook, 3);
          
-         System.out.println(javaBook);
-        
-        Book[] bkList = {javaBook,seliniumBook,mocking};
-         BookManager.printBook(bkList);
-        
+         try {
+		
+        	 System.out.println(javaBook);
+             
+             Book[] bkList = {javaBook,seliniumBook,mocking};
+              BookManager.printBook(bkList);
+             
+             
+		} catch (NullPointerException e) {
+	
+			 System.err.println("Book Object may not be initialized " + e.getMessage());
+		}
          
+          
          Librarian chiefLibrarian= new Librarian(101,"Ganesh","Vizag");
          
          System.out.println(chiefLibrarian);
@@ -58,7 +66,6 @@ public class Application {
 		try {
 			jb = new Book("Head First Java","Kathy Sieera",340.00,400);
 		} catch (RangeCheckException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
          
