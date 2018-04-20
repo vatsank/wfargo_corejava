@@ -1,12 +1,27 @@
 package com.training.library;
 
+import com.training.exceptions.RangeCheckException;
+
 public class Application {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 	
-		  Book javaBook = new Book("Head First Java","Kathy Sieera",340.00,400);
-		  Book seliniumBook = new Book("Selinium Testing","Tom",440.00,460);
-		  Book mocking = new Book("Junit Testing","Dick",1340.00,5400);
+		 Book javaBook=null;
+		 Book seliniumBook=null;
+		 Book mocking=null;
+		try {
+		
+			 javaBook = new Book("Head First Java","Kathy Sieera",340.00,400);
+			  seliniumBook = new Book("Selinium Testing","Tom",440.00,460);
+			  mocking  = new Book("Junit Testing","Dick",1340.00,5400);
+		}
+		catch(RangeCheckException e)
+		{
+			e.printStackTrace();
+		} finally {
+			
+			System.out.println("Inside Finally");
+		}
 		  
 		//  BookManager.printBook(javaBook);
 		  
@@ -39,7 +54,13 @@ public class Application {
          
          System.out.println(javaBook.equals(javaBook));   // checking identity
          
-         Book jb =new Book("Head First Java","Kathy Sieera",340.00,400);
+         Book jb=null;
+		try {
+			jb = new Book("Head First Java","Kathy Sieera",340.00,400);
+		} catch (RangeCheckException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
          
          System.out.println("equlity"+javaBook.equals(jb));   // checking equality
          

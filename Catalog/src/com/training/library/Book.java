@@ -1,4 +1,7 @@
 package com.training.library;
+
+import com.training.exceptions.RangeCheckException;
+
 /**
  * 
  * @author Srivatsan
@@ -15,12 +18,19 @@ public class Book {
 		super();
 	
 	}
-
-	public Book(String bookName, String author, double price, int pageCount) {
+// Declare Rule
+	public Book(String bookName, String author, double price, int pageCount)  throws RangeCheckException {
 		super();
 		this.bookName = bookName;
 		this.author = author;
-		this.price = price;
+		if(price < 100 || price >10000)
+		{
+			throw new RangeCheckException("Price Should be 100 - 10000");  // throwing Custom Exception
+		}
+		else
+		{
+		     this.price = price;
+		}
 		this.pageCount = pageCount;
 	}
 
@@ -43,9 +53,26 @@ public class Book {
 	public double getPrice() {
 		return price;
 	}
-
+// Handle Rule 
 	public void setPrice(double price) {
-		this.price = price;
+		
+		
+			if(price<100 ||  price >10000)
+			{
+				try
+				{
+						throw new RangeCheckException("Price should be 100 -10000");
+				}
+				 catch(RangeCheckException e)
+				 	{
+					System.err.println(e.getMessage());
+				}		
+			}
+			   
+		else
+		{
+		  this.price = price;
+		}
 	}
 
 	public int getPageCount() {
